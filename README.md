@@ -8,9 +8,9 @@ This is inspired by Kolmogorov-Arnold Networks <https://arxiv.org/abs/2404.19756
 A simple (and naive) implementation of ChebyKANLayer is provided in `chebyKANLayer.py`. Its not optimized yet.
 
 # Usage
-Just copy `chebyKANLayer.py` to your project and import it.
+Just copy `ChebyKANLayer.py` to your project and import it.
 ```python
-from chebyKANLayer import ChebyKANLayer
+from ChebyKANLayer import ChebyKANLayer
 ```
 
 # Example
