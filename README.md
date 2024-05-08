@@ -70,21 +70,49 @@ The network parameters are [28*28, 32, 16, 10] with 4 degree Chebyshev polynomia
 
 It needs a low learning rate (2e-4) to train. The network is very sensitive to the learning rate.
 
+Note that it's still not as good as MLPs. Detailed comparison is on the way.
+
 ---
 
-**Function Interpolation:** much better than MLPs when the function is (mostly) smooth, very effective in discovering mathematical laws.
+~~**Function Interpolation:** much better than MLPs when the function is (mostly) smooth, very effective in discovering mathematical laws.~~
 
 ![alt text](img/Interpolation.png)
+~~ChebyKAN: [1, 8, 1] with 8 degree.~~
+~~MLP: [1, 1024, 512, 1] with ReLU~~
 
-Edit: Adding noise to the data does not affect the ChebyKAN's performance.
+**Edit: The comparison above is not fair.**
+**Thanks @usamec for pointing out the mistake that the MLP was too big and not trained properly.**
 
-![alt text](img/Interpolation_noise.png)
+<!-- ~~Edit: Adding noise to the data does not affect the ChebyKAN's performance.~~ -->
 
+<!-- ![alt text](img/Interpolation_noise.png) -->
+
+---
+
+**Fixed version:**
+
+**Function Interpolation:** converge faster than MLPs when the function is (mostly) smooth.
+
+
+![alt text](img/Interpolation_fix.png)
 
 ChebyKAN: [1, 8, 1] with 8 degree.
+MLP: [1, 128, 1] with Tanh.
 
-MLP: [1, 1024, 512, 1] with ReLU
+With decent training, the MLP can achieve similar performance as ChebyKAN. Note that ChebyKAN shows some overfitting.
+
+However ChebyKAN converges much faster than MLP.
+
+![alt text](img/Convergence_Speed.png)
+
+ChebyKAN: Adam, lr=0.01.
+MLP: Adam, lr=0.03.
+
+@5000 epoch, ChebyKAN has already converged, while MLP is still far from convergence.
+
+![alt text](img/Early_Stopping.png)
 
 # Future Work
 More experiments and optimizations are needed to prove the correctness and effectiveness of ChebyKAN. 
 Not sure if the current parameters initialization is optimal. Maybe Xavier initialization is better.
+I'm not sure if the current implementation is correct. Any suggestions are welcome.
