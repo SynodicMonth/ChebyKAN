@@ -76,6 +76,11 @@ It needs a low learning rate (2e-4) to train. The network is very sensitive to t
 
 ![alt text](img/Interpolation.png)
 
+Edit: Adding noise to the data does not affect the ChebyKAN's performance.
+
+![alt text](img/Interpolation_noise.png)
+
+
 ChebyKAN: [1, 8, 1] with 8 degree.
 
 MLP: [1, 1024, 512, 1] with ReLU
