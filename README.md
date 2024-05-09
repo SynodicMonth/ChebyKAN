@@ -1,3 +1,5 @@
+## This is a VERY COARSE version and absolutely NOT FULLY TESTED! it's only intended for experiementing! Any discussion and criticism are welcome! Check the issues for more information!
+
 # ChebyKAN
 Kolmogorov-Arnold Networks (KAN) using Chebyshev polynomials instead of B-splines.
 
