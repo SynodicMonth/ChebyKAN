@@ -23,7 +23,7 @@ class ChebyKANLayer(nn.Module):
         if self.degree > 0:
             cheby[:, :, 1] = x
         for i in range(2, self.degree + 1):
-            cheby[:, :, i] = 2 * x * cheby[:, :, i - 1].clone() - cheby[:, :, i - 2].clone()
+            cheby[:, :, i] = torch.cos(i * torch.acos(x))
         # Compute the Chebyshev interpolation
         y = torch.einsum('bid,iod->bo', cheby, self.cheby_coeffs)  # shape = (batch_size, outdim)
         y = y.view(-1, self.outdim)
