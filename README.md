@@ -7,7 +7,10 @@ This is inspired by Kolmogorov-Arnold Networks <https://arxiv.org/abs/2404.19756
 
 [Chebyshev polynomials](https://en.wikipedia.org/wiki/Chebyshev_polynomials) are orthogonal polynomials defined on the interval [-1, 1]. They are very good at approximating functions and can be calculated recursively. 
 
-A simple (and naive) implementation of ChebyKANLayer is provided in `chebyKANLayer.py`. Its not optimized yet.
+A simple (and naive) implementation of ChebyKANLayer is provided in `chebyKANLayer_unoptimized.py`. Its reserved for a brief understanding.
+
+Thanks @JanRocketMan for proving ChebyKAN = Linear + custom activation function. (see issue #3 for more information)
+Thanks @iiisak and @K-H-Ismail for providing an optimized version by replace recurrent definition with trigonometric definition and vectorization. The optimized version is in `ChebyKANLayer.py`.
 
 # Usage
 Just copy `ChebyKANLayer.py` to your project and import it.
